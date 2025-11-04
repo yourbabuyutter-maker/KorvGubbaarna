@@ -157,8 +157,8 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 142px;
-  height: 142px;
+  width: clamp(82px, 18vw, 142px);
+  height: clamp(82px, 18vw, 142px);
   color: #ffe9f1;
   font-weight: bold;
   text-decoration: none;
@@ -329,7 +329,7 @@ footer {
 }
 .button-valorant .brand-icon {
   width: 64px;
-  height: 64px;
+  height: 128px;
   color: #ff4655; /* red icon */
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -801,5 +801,13 @@ main {
   }
   .footer-collab {
     gap: 14px;
+  }
+}
+
+@media(max-width: 400px) {
+  .brutalist-button
+  {
+   width: 122px;
+   height: 122px;
   }
 }

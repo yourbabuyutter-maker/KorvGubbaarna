@@ -75,12 +75,20 @@ footer {
   justify-content: space-between;
   padding: 16px 24px;
   gap: clamp(12px, 3vw, 40px);
+      border: solid rgb(255, 0, 200) 2px;
+
 }
 .start {
   display: flex;
   align-items: center;
   gap: clamp(16px, 3vw, 40px);
 }
+
+.site-header .start {
+  display: flex;
+  align-items: center;
+}
+
 
 /* logo circle */
 .logo-circle {
@@ -91,20 +99,26 @@ footer {
   display: inline-block;
   background: rgba(255, 255, 255, 0.06);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  border: 2px red solid;
 }
 .logo-circle > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  
 }
+
+
 
 .site-header nav ul {
   display: flex;
-  gap: 28px;
+  gap: 19px;
   list-style: none;
   margin: 0;
   padding: 0;
+    border: solid rgb(0, 140, 255) 2px;
+
 }
 .site-header nav a {
   color: #fff;
@@ -112,6 +126,9 @@ footer {
   position: relative;
   padding: 6px 0;
   font-size: 16px;
+  
+    border: solid rgb(0, 255, 42) 2px;
+
 }
 .site-header nav a::after {
   content: "";
@@ -122,6 +139,9 @@ footer {
   height: 2px;
   background: var(--brand);
   transition: width 0.25s ease;
+  border: solid rgb(0, 140, 255) 2px;
+  
+
 }
 .site-header nav a:hover::after {
   width: 100%;
@@ -142,6 +162,8 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+    
+    
   }
   .start {
     width: 100%;
@@ -157,8 +179,8 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 142px;
-  height: 142px;
+  width: clamp(82px, 18vw, 142px);
+  height: clamp(82px, 18vw, 142px);
   color: #ffe9f1;
   font-weight: bold;
   text-decoration: none;
@@ -329,7 +351,7 @@ footer {
 }
 .button-valorant .brand-icon {
   width: 64px;
-  height: 64px;
+  height: 128px;
   color: #ff4655; /* red icon */
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -360,7 +382,7 @@ footer {
 }
 
 :root {
-  --card-height: clamp(320px, 36vw, 460px);
+  --card-height: clamp(360px, 40vw, 460px);
   --card-width: calc(var(--card-height) / 1.5);
 }
 
@@ -486,18 +508,22 @@ footer {
   grid-template-columns: 1fr auto;
   pointer-events: none;
 }
+
 .drawer[aria-hidden="false"] {
   pointer-events: auto;
 }
+
 .drawer-backdrop {
   grid-column: 1/2;
   background: rgba(0, 0, 0, 0.55);
   opacity: 0;
   transition: opacity 0.25s;
 }
+
 .drawer[aria-hidden="false"] .drawer-backdrop {
   opacity: 1;
 }
+
 .drawer-panel {
   grid-column: 2/3;
   width: min(92vw, 760px);
@@ -511,6 +537,7 @@ footer {
   display: flex;
   flex-direction: column;
 }
+
 .drawer[aria-hidden="false"] .drawer-panel {
   transform: translateX(0);
 }
@@ -529,6 +556,7 @@ footer {
   padding: 4px 8px;
   border-radius: 8px;
 }
+
 .drawer-close:hover {
   background: rgba(255, 255, 255, 0.08);
 }
@@ -801,5 +829,13 @@ main {
   }
   .footer-collab {
     gap: 14px;
+  }
+}
+
+@media (max-width: 1080px) {
+  .brutalist-button {
+    display: none;
+    pointer-events: none;
+    visibility: hidden;
   }
 }

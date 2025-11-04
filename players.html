@@ -1,11 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Korvgubbarna</title>
+
+  <link rel="icon" type="image/png" href="images/KG.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk&family=Mali:ital,wght@0,200..700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
-    
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="start">
+        <a class="logo-circle" href="index.html">
+          <img src="images/KG.png" alt="KG"/>
+        </a>
+
+        <nav class="nav-left ff-display">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <nav class="nav-right ff-display">
+        <ul>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Sign Up</a></li>
+          <li>
+            <a class="brutalist-button button-foodora" href="https://www.foodora.se/" target="_blank" rel="noopener">
+              <div class="brand-logo">
+                <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="currentColor" d="M19 7h-2l-1-2h-3v2h2l1 2h-3a4 4 0 0 0-3.87 2.9L7.5 12H6a3 3 0 1 0 2.83 4h6.34A3 3 0 1 0 19 13h1a2 2 0 1 0 0-4h-1ZM6 17a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm12 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+                </svg>
+              </div>
+              <div class="button-text ff-body">
+                <span>Powered by</span><span>Foodora</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="brutalist-button button-valorant" href="https://playvalorant.com/download" target="_blank" rel="noopener">
+              <div class="brand-logo">
+                <svg class="brand-icon" viewBox="0 0 512 512" aria-hidden="true">
+                  <path fill="currentColor" d="M471.8 83.3 304.9 311.6l61.7 82.6L512 83.3h-40.2zM.1 83.3l210.3 292.9 61.6-82.6L83.4 83.3H.1z"/>
+                </svg>
+              </div>
+              <div class="button-text"><span>Download</span><span>VALORANT</span></div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+    <section class="cards">
+  <button type="button" class="card" data-player="sid" aria-controls="profile-drawer" aria-expanded="false">
+    <div class="wrapper"><img src="images/bg.png" class="cover-image" alt="" loading="lazy"></div>
+    <img src="images/TOPFRAGTORSKEN-removebg-preview (1).png" class="title" alt="Sid title" loading="lazy">
+    <img src="images/sid.png" class="character" alt="Sid" loading="lazy">
+  </button>
+
+  <button type="button" class="card" data-player="eliot" aria-controls="profile-drawer" aria-expanded="false">
+    <div class="wrapper"><img src="images/bg.png" class="cover-image" alt="" loading="lazy"></div>
+    <img src="images/_Kxnjipxlr.png" class="title" alt="Eliot title" loading="lazy">
+    <img src="images/Eliot.png" class="character" alt="Eliot" loading="lazy">
+  </button>
+</section>
+
+  </main>
+
+<div id="profile-drawer" class="drawer" aria-hidden="true">
+  <button class="drawer-backdrop" data-close aria-label="Close"></button>
+  <aside class="drawer-panel" role="dialog" aria-modal="true">
+    <header class="drawer-header">
+      <button class="drawer-close" data-close aria-label="Close">&times;</button>
+    </header>
+    <div class="drawer-content"></div>
+  </aside>
+</div>
+
+
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-collab">
+          <img src="images/KG.png" alt="Korvgubbarna" class="collab-logo"/>
+          <span class="collab-x">×</span>
+          <img src="images/Btc.png" alt="Born To Create" class="collab-logo"/>
+        </div>
+
+        <h2 class="footer-title ff-display">Korvgubbarna x Born to Create</h2>
+        <p class="footer-desc">Player & streamer profiles, game insights, strengths, and quick links to their streams — plus Foodora when you need a snack break.</p>
+
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/" class="social-link"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+          <a href="#" class="social-link"><i class="fa-brands fa-discord"></i> Discord</a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 Korvgubbarna, All rights reserved.</p>
+          <p>BTC – Born to Create Studio. Cannot contact the store owner / Report a fraudulent business.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

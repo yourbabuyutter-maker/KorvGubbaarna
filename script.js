@@ -4,8 +4,7 @@ const PROFILES = {
     avatar: "images/sid.png",
     name: "Sid",
     role: "Duelist / Top Frag",
-    about:
-      "Explosive entry, confident aim, heavy impact on pistol/bonus rounds.",
+    about: "Explosive entry, confident aim, heavy impact on pistol/bonus rounds.",
     exp: [
       {
         year: "2023",
@@ -44,8 +43,95 @@ const PROFILES = {
     email: "eliot@example.com",
     address: "Gothenburg, Sweden",
   },
+  colin: {
+    cover: "images/bg.png",
+    avatar: "images/Colin.png",
+    name: "Colin",
+    role: "Defender",
+    about: "Defensive playstyle with a good gamesense.",
+    exp: [
+      {
+        year: "2000",
+        title: "IGL — Mix Teams",
+        desc: "???",
+      },
+      {
+        year: "2025",
+        title: "Korvgubbarna — Defense",
+        desc: "???",
+      },
+    ],
+    phone: "(+46) 732-4444444",
+    email: "Colin@example.com",
+    address: "Gothenburg, Sweden",
+  },
+  damjan: {
+    cover: "images/bg.png",
+    avatar: "images/Damjan.png",
+    name: "Damjan",
+    role: "Team player",
+    about: "Team player, breaks controllers.",
+    exp: [
+      {
+        year: "2021",
+        title: "IGL — Mix Teams",
+        desc: "???",
+      },
+      {
+        year: "2025",
+        title: "Korvgubbarna — Team player",
+        desc: "???",
+      },
+    ],
+    phone: "(+46) 731-111111",
+    email: "Damjan@example.com",
+    address: "Gothenburg, Sweden",
+  },
+  emile: {
+    cover: "images/bg.png",
+    avatar: "images/Emile.png",
+    name: "Emile",
+    role: "Dps",
+    about: "Fast with an offensive playstyle.",
+    exp: [
+      {
+        year: "2020",
+        title: "IGL — Mix Teams",
+        desc: "???",
+      },
+      {
+        year: "2025",
+        title: "Korvgubbarna — Dps",
+        desc: "???",
+      },
+    ],
+    phone: "(+46) 731-111111",
+    email: "Emile@example.com",
+    address: "Gothenburg, Sweden",
+  },
+  djamil: {
+    cover: "images/bg.png",
+    avatar: "images/Djamil.png",
+    name: "Djamil",
+    role: "Pusher",
+    about: "Fast and explosive playstyle, go in and hope for the best.",
+    exp: [
+      {
+        year: "2020",
+        title: "IGL — Mix Teams",
+        desc: "???",
+      },
+      {
+        year: "2025",
+        title: "Korvgubbarna — Pusher",
+        desc: "???",
+      },
+    ],
+    phone: "(+46) 731-111111",
+    email: "Djamil@example.com",
+    address: "Gothenburg, Sweden",
+  },
 };
-
 function buildPcHTML(p) {
   const exp = p.exp
     .map(
@@ -150,7 +236,11 @@ function initPcTabs(scope) {
 
 function openDrawer(key) {
   const p = PROFILES[key];
-  if (!p) return;
+  if (!p) {
+    console.error(`Profile not found for key: ${key}`);
+    return;
+  }
+  console.log(`Opening drawer for: ${key}`, p); // Debugging
   content.innerHTML = buildPcHTML(p);
   drawer.setAttribute("aria-hidden", "false");
   initPcTabs(content);
@@ -167,11 +257,13 @@ document.addEventListener("click", (e) => {
   const cardEl = e.target.closest(".cards .card[data-player]");
   if (cardEl) {
     e.preventDefault();
+    console.log(`Card clicked: ${cardEl.getAttribute("data-player")}`); // Debugging
     lastFocused = cardEl;
     openDrawer(cardEl.getAttribute("data-player"));
   }
   if (e.target.matches("[data-close]")) {
     e.preventDefault();
+    console.log("Close button clicked"); // Debugging
     closeDrawer();
   }
 });

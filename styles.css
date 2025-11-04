@@ -643,24 +643,30 @@ footer {
   );
 }
 
-.pc-header{
+/* make the header a bit taller so the whole person fits */
+.pc-header {
   height: clamp(240px, 32vw, 300px); /* was ~200px */
 }
 
-.pc-avatar{
+.pc-avatar {
   position: absolute;
   right: 24px;
-  bottom: 0;                 
-  width: min(38%, 220px);    
+  bottom: 0;
+  width: min(38%, 220px);
   height: auto;
   object-fit: contain;
-  object-position: bottom right; 
-  transform: none;          
-  filter: drop-shadow(0 12px 24px rgba(0,0,0,.5));
+  object-position: bottom right;
+  transform: none; 
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
 }
 
-.pc-card{ overflow: hidden; } 
-.pc-header{ overflow: visible; } 
+.pc-card {
+  overflow: hidden;
+}
+.pc-header {
+  overflow: visible;
+}
+.pc-avatar{ transform: translateY(6%); }
 
 
 .page-wrapper {

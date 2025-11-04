@@ -3,6 +3,7 @@ const PROFILES = {
     cover: "images/bg.png",
     avatar: "images/sid.png",
     name: "Sid",
+    
     role: "Duelist / Top Frag",
     about:
       "Explosive entry, confident aim, heavy impact on pistol/bonus rounds.",
@@ -26,6 +27,7 @@ const PROFILES = {
     cover: "images/bg.png",
     avatar: "images/Eliot.png",
     name: "Eliot",
+    
     role: "Initiator / IGL",
     about: "Calls defaults, times execs, sets teammates up with utility.",
     exp: [
@@ -44,6 +46,97 @@ const PROFILES = {
     email: "eliot@example.com",
     address: "Gothenburg, Sweden",
   },
+Colin: {
+  cover: "images/bg.png",
+  avatar: "images/Colin.png",
+  name: "Colin",
+  
+  role: "Defender",
+  about: "Defensive playstyle with a good gamesense",
+  exp: [
+    {
+      year: "2000",
+      title: "IGL — Mix Teams",
+      desc: "",
+    },
+    {
+      year: "2025",
+      title: "Korvgubbarna — Defense",
+      desc: "???",
+    },
+  ],
+  phone: "(+46) 732-4444444",
+  email: "Colin@example.com",
+  address: "Gothenburg, Sweden",
+},
+Damjan: {
+  cover: "images/bg.png",
+  avatar: "images/Damjan.png",
+  name: "Damjan",
+ 
+  role: "Team player",
+  about: "Team player, breaks controllers",
+  exp: [
+    {
+      year: "2021",
+      title: "IGL — Mix Teams",
+      desc: "???",
+    },
+    {
+      year: "2025",
+      title: "Korvgubbarna — Team player",
+      desc: "???",
+    },
+  ],
+  phone: "(+46) 731-111111",
+  email: "Damjan@example.com",
+  address: "Gothenburg, Sweden",
+},
+Emile: {
+  cover: "images/bg.png",
+  avatar: "images/Emile.png",
+  name: "Emile",
+  
+  role: "Dps",
+  about: "Fast with a offensive playstyle",
+  exp: [
+    {
+      year: "2020",
+      title: "IGL — Mix Teams",
+      desc: "???",
+    },
+    {
+      year: "2025",
+      title: "Korvgubbarna — Dps ",
+      desc: "???",
+    },
+  ],
+  phone: "(+46) 731-111111",
+  email: "Emile@example.com",
+  address: "Gothenburg, Sweden",
+},
+Djamil: {
+  cover: "images/bg.png",
+  avatar: "images/Djamil.png",
+  name: "Djamil",
+  role: "Pusher",
+  about: "Fast and explosive playstyle, go in and hope for the best",
+  exp: [
+    {
+      year: "2020",
+      title: "IGL — Mix Teams",
+      desc: "???",
+    },
+    {
+      year: "2025",
+      title: "Korvgubbarna — Pusher",
+      desc: "???",
+    },
+  ],
+  phone: "(+46) 731-111111",
+  email: "Djamil@example.com",
+  address: "Gothenburg, Sweden",
+},
 };
 
 function buildPcHTML(p) {

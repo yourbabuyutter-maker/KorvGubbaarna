@@ -3,19 +3,18 @@ const PROFILES = {
     cover: "images/bg.png",
     avatar: "images/sid.png",
     name: "Sid",
-    role: "Duelist / Top Frag",
-    about:
-      "Explosive entry, confident aim, heavy impact on pistol/bonus rounds.",
+    role: "TOPFRAGTORSKEN / Kellerth med en offensiv och snabb spelstil, bra aim och relativt  bra gamesense.",
+    about: "Han spelar oftast Fortnite men ibland Valorant. Jag började med esporten genom kompisar, när jag var hemma hos dom och spelade så blev jag indragen i det och ville spela mer för det var roligt. Det första spelet jag blev bra på var Fortnite för det var ett av de första spelen jag spelade på riktigt. Jag spelar ungefär 4-8 timmar per dag beroende om man gör något annat under dagen eller inte. Mina föräldrar tycker att det är roligt att jag spelar för att jag tjänar pengar på det men de är också glada för att jag gör andra saker än att spela. Det känns bra när man vinner en match men när man förlorar en match man egentligen skulle vinna så blir man frustrerad och man tänker på vad man skulle kunnat göra annorlunda så man skulle kunna vunnit.",
     exp: [
       {
-        year: "2023",
-        title: "Korvgubbarna — Duelist",
-        desc: "Ace rounds and opener picks in officials.",
+        year: "2025",
+        title: "Korvgubbarna — ???",
+        desc: "???",
       },
       {
-        year: "2024",
+        year: "2025",
         title: "LAN Mix",
-        desc: "Top 5 MVP runs; strong comms under pressure.",
+        desc: "???",
       },
     ],
     phone: "(+46) 700-000000",
@@ -26,11 +25,11 @@ const PROFILES = {
     cover: "images/bg.png",
     avatar: "images/Eliot.png",
     name: "Eliot",
-    role: "Initiator / IGL",
-    about: "Calls defaults, times execs, sets teammates up with utility.",
+    role: "Kxnjipxlr / Enstjärna med en relativt defensiv spelstil och spelar mest Valorant.",
+    about: "Jag började med esport för ungefär 1 ½ år sedan, det var då jag fick min första highspec dator. Samma dag som jag fick datorn installerade jag Valorant. Nu har jag kört spelet varje dag i 5-6 timmar sedan dag 1. Jag spenderar ca 2 timmar på riktig träning och sedan 4 timmar till på att köra vanliga matcher. Mina föräldrar har aldrig riktigt varit väldigt stödjande när det gäller min esports karriär men de respekterar mina ambitioner. Det som fick mig att fastna med esporten var känslan av att vinna. Känslan av att ha gjort något bra, något rätt. När det kommer till matcher som man förlorar kan det vara lite surt, speciellt om man har gjort sitt bästa men ingen annan på laget presterar bra så kan det vara extremt frustrerande. Colin",
     exp: [
       {
-        year: "2022",
+        year: "2025",
         title: "IGL — Mix Teams",
         desc: "Mid-round calling & anti-tilt leadership.",
       },
@@ -44,8 +43,95 @@ const PROFILES = {
     email: "eliot@example.com",
     address: "Gothenburg, Sweden",
   },
+  colin: {
+    cover: "images/bg.png",
+    avatar: "images/Colin.png",
+    name: "Colin",
+    role: "Defender",
+    about: "Defensive playstyle with a good gamesense.",
+    exp: [
+      {
+        year: "2000",
+        title: "IGL — Mix Teams",
+        desc: "???",
+      },
+      {
+        year: "2025",
+        title: "Korvgubbarna — Defense",
+        desc: "???",
+      },
+    ],
+    phone: "(+46) 732-4444444",
+    email: "Colin@example.com",
+    address: "Gothenburg, Sweden",
+  },
+  damjan: {
+    cover: "images/bg.png",
+    avatar: "images/Damjan.png",
+    name: "Damjan",
+    role: "Team player",
+    about: "Team player, breaks controllers.",
+    exp: [
+      {
+        year: "2021",
+        title: "IGL — Mix Teams",
+        desc: "???",
+      },
+      {
+        year: "2025",
+        title: "Korvgubbarna — Team player",
+        desc: "???",
+      },
+    ],
+    phone: "(+46) 731-111111",
+    email: "Damjan@example.com",
+    address: "Gothenburg, Sweden",
+  },
+  emile: {
+    cover: "images/bg.png",
+    avatar: "images/Emile.png",
+    name: "Emile",
+    role: "Dps",
+    about: "Fast with an offensive playstyle.",
+    exp: [
+      {
+        year: "2020",
+        title: "IGL — Mix Teams",
+        desc: "???",
+      },
+      {
+        year: "2025",
+        title: "Korvgubbarna — Dps",
+        desc: "???",
+      },
+    ],
+    phone: "(+46) 731-111111",
+    email: "Emile@example.com",
+    address: "Gothenburg, Sweden",
+  },
+  djamil: {
+    cover: "images/bg.png",
+    avatar: "images/Djamil.png",
+    name: "Djamil",
+    role: "Pusher",
+    about: "Fast and explosive playstyle, go in and hope for the best.",
+    exp: [
+      {
+        year: "2020",
+        title: "IGL — Mix Teams",
+        desc: "???",
+      },
+      {
+        year: "2025",
+        title: "Korvgubbarna — Pusher",
+        desc: "???",
+      },
+    ],
+    phone: "(+46) 731-111111",
+    email: "Djamil@example.com",
+    address: "Gothenburg, Sweden",
+  },
 };
-
 function buildPcHTML(p) {
   const exp = p.exp
     .map(
@@ -150,7 +236,11 @@ function initPcTabs(scope) {
 
 function openDrawer(key) {
   const p = PROFILES[key];
-  if (!p) return;
+  if (!p) {
+    console.error(`Profile not found for key: ${key}`);
+    return;
+  }
+  console.log(`Opening drawer for: ${key}`, p); // Debugging
   content.innerHTML = buildPcHTML(p);
   drawer.setAttribute("aria-hidden", "false");
   initPcTabs(content);
@@ -167,11 +257,13 @@ document.addEventListener("click", (e) => {
   const cardEl = e.target.closest(".cards .card[data-player]");
   if (cardEl) {
     e.preventDefault();
+    console.log(`Card clicked: ${cardEl.getAttribute("data-player")}`); // Debugging
     lastFocused = cardEl;
     openDrawer(cardEl.getAttribute("data-player"));
   }
   if (e.target.matches("[data-close]")) {
     e.preventDefault();
+    console.log("Close button clicked"); // Debugging
     closeDrawer();
   }
 });
@@ -183,3 +275,5 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && drawer.getAttribute("aria-hidden") === "false")
     closeDrawer();
 });
+
+

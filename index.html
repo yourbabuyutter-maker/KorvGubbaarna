@@ -30,22 +30,59 @@
     <div class="page-wrapper">
       <header class="site-header">
         <div class="start">
-          <a class="logo-circle" href="index.html"><img src="images/KG.png" alt="KG">
-              </a>
+          <a class="logo-circle" href="index.html">
+            <img src="images/KG.png" alt="KG" />
+          </a>
+
+          <!-- hidden checkbox + clickable hamburger -->
+          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <label class="hamburger" for="menu-toggle" aria-label="Open menu">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <path
+                class="line line-top-bottom"
+                d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"
+              />
+              <path class="line" d="M7 16 27 16" />
+            </svg>
+          </label>
+
           <nav class="nav-left ff-display">
             <ul>
-              <li></li>
               <li><a href="index.html">Home</a></li>
               <li><a href="players.html">Players</a></li>
               <li><a href="about.html">About</a></li>
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Sign Up</a></li>
+              <li>
+                <a href="/login" class="btn" aria-label="Login">
+                  <strong>LOGIN</strong>
+                  <div class="container-stars">
+                    <div class="stars"></div>
+                  </div>
+                  <div class="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                  </div>
+                </a>
+              </li>
+
+              <li>
+                <a href="/signup" class="btn" aria-label="Sign Up">
+                  <strong>SIGN&nbsp;UP</strong>
+                  <div class="container-stars">
+                    <div class="stars"></div>
+                  </div>
+                  <div class="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                  </div>
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
 
         <nav class="nav-right ff-display">
-          <ul><li>
+          <ul>
+            <li>
               <a
                 class="brutalist-button button-foodora"
                 href="https://www.foodora.se/"
@@ -99,8 +136,43 @@
           </ul>
         </nav>
       </header>
-    </div>
+      <img
+        class="floater left-edge"
+        src="images/Hand Holding Grilled Sausage.png"
+        alt=""
+      />
+      <img
+        class="floater right-edge"
+        src="images/Hand Holding Linked Sausages.png"
+        alt=""
+      />
 
+      <section class="hero-kg">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <p class="eyebrow">Välkommen till</p>
+
+            <h1 class="kg-title">
+              KORVGUBBARNA
+              <span class="kg-sub">text.</span>
+            </h1>
+
+            <p class="lead">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, dicta reprehenderit, veritatis id quas at placeat commodi soluta libero officia, quisquam consectetur corrupti quia velit tempora praesentium nesciunt culpa. Culpa!
+            </p>
+
+            <div class="actions">
+              <a class="btn brand" href="#">Se mer →</a>
+              <a class="btn ghost" href="#">Titta</a>
+            </div>
+          </div>
+
+          <figure class="hero-media">
+            <img src="images/Btc.png" alt="Korvgubbarna – serverar korv" />
+          </figure>
+        </div>
+      </section>
+    </div>
 
     <footer class="footer">
       <div class="footer-content">
@@ -128,7 +200,8 @@
         <div class="footer-bottom">
           <p>© 2025 Korvgubbarna, All rights reserved.</p>
           <p>
-            BTC – Born to Create Studio. Cannot contact the store owner / Report a fraudulent business.
+            BTC – Born to Create Studio. Cannot contact the store owner / Report
+            a fraudulent business.
           </p>
         </div>
       </div>

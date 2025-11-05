@@ -837,7 +837,6 @@ main {
   left: -9999px;
 }
 
-
 .hamburger {
   cursor: pointer;
 }
@@ -1367,3 +1366,82 @@ main {
     display: inline-block;
   }
 }
+
+.wrapper {
+  background: #101014;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(255, 0, 150, 0.1);
+  width: 800px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.brand {
+  background: #ff3c8f;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+
+.nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn {
+  background: #1a1a1f;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: #2a2a30;
+}
+
+.btn-book {
+  background: linear-gradient(90deg, #ff3c8f, #b300ff);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.card {
+  background: #141418;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  background: #1b1b22;
+}
+
+.card-title {
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.card-text {
+  color: #aaa;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+

@@ -359,7 +359,7 @@
         </div>
       </div>
     </footer>
-    <!-- Twitch embed script (MÅSTE vara med) -->
+
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
     
     <script>
@@ -375,8 +375,6 @@
       statusBadge.classList.remove("is-live");
       viewerChip.hidden = true;
 
-      // Viktigt: parent MÅSTE matcha den domän där sidan körs.
-      // Detta tar automatiskt aktuell domän.
       const parents = [window.location.hostname];
 
       const embed = new Twitch.Embed("twitch-embed", {
@@ -388,7 +386,6 @@
         parent: parents
       });
 
-      // När Twitch säger att kanalen är live
       embed.addEventListener(Twitch.Embed.ONLINE, () => {
         offlineNote.hidden = true;
         statusBadge.textContent = "LIVE";
@@ -396,7 +393,6 @@
         viewerChip.hidden = false;
       });
 
-      // När Twitch säger att kanalen är offline
       embed.addEventListener(Twitch.Embed.OFFLINE, () => {
         offlineNote.hidden = false;
         statusBadge.textContent = "OFFLINE";

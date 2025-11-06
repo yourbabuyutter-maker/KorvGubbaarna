@@ -240,7 +240,7 @@ function openDrawer(key) {
     console.error(`Profile not found for key: ${key}`);
     return;
   }
-  console.log(`Opening drawer for: ${key}`, p); // Debugging
+  console.log(`Opening drawer for: ${key}`, p);
   content.innerHTML = buildPcHTML(p);
   drawer.setAttribute("aria-hidden", "false");
   initPcTabs(content);
@@ -257,13 +257,13 @@ document.addEventListener("click", (e) => {
   const cardEl = e.target.closest(".cards .card[data-player]");
   if (cardEl) {
     e.preventDefault();
-    console.log(`Card clicked: ${cardEl.getAttribute("data-player")}`); // Debugging
+    console.log(`Card clicked: ${cardEl.getAttribute("data-player")}`); 
     lastFocused = cardEl;
     openDrawer(cardEl.getAttribute("data-player"));
   }
   if (e.target.matches("[data-close]")) {
     e.preventDefault();
-    console.log("Close button clicked"); // Debugging
+    console.log("Close button clicked");
     closeDrawer();
   }
 });

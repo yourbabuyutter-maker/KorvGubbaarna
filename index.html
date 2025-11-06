@@ -359,7 +359,52 @@
         </div>
       </div>
     </footer>
+    <!-- Twitch embed script (MÅSTE vara med) -->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    
+    <script>
+      const channel = "lbsnorraesport_";
+
+      const offlineNote = document.getElementById("offline-note");
+      const statusBadge = document.getElementById("statusBadge");
+      const viewerChip = document.getElementById("viewerChip");
+
+      // Default: visa offline
+      offlineNote.hidden = false;
+      statusBadge.textContent = "OFFLINE";
+      statusBadge.classList.remove("is-live");
+      viewerChip.hidden = true;
+
+      // Viktigt: parent MÅSTE matcha den domän där sidan körs.
+      // Detta tar automatiskt aktuell domän.
+      const parents = [window.location.hostname];
+
+      const embed = new Twitch.Embed("twitch-embed", {
+        width: "100%",
+        height: "100%",
+        channel,
+        layout: "video",
+        autoplay: false,
+        parent: parents
+      });
+
+      // När Twitch säger att kanalen är live
+      embed.addEventListener(Twitch.Embed.ONLINE, () => {
+        offlineNote.hidden = true;
+        statusBadge.textContent = "LIVE";
+        statusBadge.classList.add("is-live");
+        viewerChip.hidden = false;
+      });
+
+      // När Twitch säger att kanalen är offline
+      embed.addEventListener(Twitch.Embed.OFFLINE, () => {
+        offlineNote.hidden = false;
+        statusBadge.textContent = "OFFLINE";
+        statusBadge.classList.remove("is-live");
+        viewerChip.hidden = true;
+      });
+    </script>
+
     <script src="script.js"></script>
   </body>
 </html>

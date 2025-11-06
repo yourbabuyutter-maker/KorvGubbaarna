@@ -34,8 +34,12 @@
             <img src="images/KG.png" alt="KG" />
           </a>
 
-          <!-- Hamburger toggle (checkbox hack) -->
-          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle"
+            aria-controls="primary-nav"
+          />
           <label class="hamburger" for="menu-toggle" aria-label="Open menu">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <path
@@ -46,19 +50,15 @@
             </svg>
           </label>
 
-          <!-- Main nav (includes Login / Sign Up once) -->
-          <nav class="nav-left ff-display">
+          <nav id="primary-nav" class="nav-left ff-display" aria-label="Main">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="players.html">Players</a></li>
               <li><a href="about.html">About</a></li>
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Sign Up</a></li>
             </ul>
           </nav>
         </div>
 
-        <!-- Right side: ONLY the big brand buttons -->
         <nav class="nav-right ff-display">
           <ul>
             <li>
@@ -81,10 +81,12 @@
                   </svg>
                 </div>
                 <div class="button-text ff-body">
-                  <span>Powered by</span><span>Foodora</span>
+                  <span>Powered by</span>
+                  <span>Foodora</span>
                 </div>
               </a>
             </li>
+
             <li>
               <a
                 class="brutalist-button button-valorant"
@@ -105,13 +107,109 @@
                   </svg>
                 </div>
                 <div class="button-text">
-                  <span>Download</span><span>VALORANT</span>
+                  <span>Download</span>
+                  <span>VALORANT</span>
                 </div>
               </a>
             </li>
           </ul>
         </nav>
       </header>
+
+
+      <main class="se-match">
+  <!-- HERO -->
+  <section class="se-hero">
+    <div class="se-hero-inner">
+      <h1 class="ff-display">Se match</h1>
+      <p class="lead ff-body">
+        Följ Korvgubbarna live – resultat, tid, karta och länk till streamen.
+      </p>
+      <a class="se-btn se-btn--brand" href="#se-stream">Titta live →</a>
+    </div>
+  </section>
+
+  <!-- LIVE + KOMMANDE -->
+  <section class="se-grid">
+    <!-- Live match-kort -->
+    <article class="se-card se-live">
+      <div class="se-card-head">
+        <span class="pill live">LIVE</span>
+        <span class="small ff-body">Bo3 • Valorant</span>
+      </div>
+
+      <div class="se-versus">
+        <div class="team">
+          <img src="images/KG.png" alt="Korvgubbarna" />
+          <span class="team-name ff-display">Korvgubbarna</span>
+        </div>
+        <div class="score ff-display"><span>0</span><span>-</span><span>0</span></div>
+        <div class="team">
+          <img src="images/ano.jpg" alt="???" />
+          <span class="team-name ff-display">???</span>
+        </div>
+      </div>
+
+      <div class="se-meta">
+        <div><i class="fa-regular fa-clock"></i> Karta: Ascent</div>
+        <div><i class="fa-solid fa-signal"></i> Sändning: Svenska</div>
+      </div>
+
+      <a class="se-btn se-btn--ghost" id="se-stream-link" href="#se-stream">Öppna stream</a>
+    </article>
+
+    <!-- Kommande matcher -->
+    <aside class="se-card se-upcoming">
+      <h2 class="ff-display">Kommande matcher</h2>
+      <ul class="match-list">
+        <li>
+          <div>
+            <strong>Korvgubbarna vs Pixel Pals</strong>
+            <span class="muted">Bo3 • Split</span>
+          </div>
+          <span class="time">Idag 19:30</span>
+        </li>
+        <li>
+          <div>
+            <strong>Korvgubbarna vs Night Owls</strong>
+            <span class="muted">Bo1 • Bind</span>
+          </div>
+          <span class="time">Fre 18:00</span>
+        </li>
+        <li>
+          <div>
+            <strong>Korvgubbarna vs Apex Crew</strong>
+            <span class="muted">Bo3 • Haven</span>
+          </div>
+          <span class="time">Sön 14:00</span>
+        </li>
+      </ul>
+      <a class="se-btn se-btn--line" href="#">Hela spelschemat</a>
+    </aside>
+
+    <!-- Stream -->
+    <section id="se-stream" class="se-card se-stream">
+      <div class="se-card-head">
+        <h2 class="ff-display">Livestream</h2>
+        <span class="pill">Twitch</span>
+      </div>
+      <div class="player-frame">
+        <iframe
+          src="https://www.twitch.tv/Lbsnorraesport_"
+          allowfullscreen
+          scrolling="no"
+          frameborder="0"
+          title="Twitch Player"
+        ></iframe>
+      </div>
+      <p class="muted ff-body small">
+        Om spelaren inte laddar: öppna direkt på
+        <a href="https://www.twitch.tv/Lbsnorraesport_" target="_blank" rel="noopener">twitch.tv/Lbsnorraesport_</a>
+      </p>
+    </section>
+  </section>
+</main>
+
 
     
 

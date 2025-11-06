@@ -25,14 +25,18 @@
 
   <body>
     <div class="page-wrapper">
-      <!-- HEADER -->
       <header class="site-header">
         <div class="start">
           <a class="logo-circle" href="index.html">
             <img src="images/KG.png" alt="KG" />
           </a>
 
-          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle"
+            aria-controls="primary-nav"
+          />
           <label class="hamburger" for="menu-toggle" aria-label="Open menu">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <path
@@ -43,31 +47,11 @@
             </svg>
           </label>
 
-          <nav class="nav-left ff-display">
+          <nav id="primary-nav" class="nav-left ff-display" aria-label="Main">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="players.html">Players</a></li>
               <li><a href="about.html">About</a></li>
-              <li>
-                <a href="/login" class="btn" aria-label="Login">
-                  <strong>LOGIN</strong>
-                  <div class="container-stars"><div class="stars"></div></div>
-                  <div class="glow">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="/signup" class="btn" aria-label="Sign Up">
-                  <strong>SIGN&nbsp;UP</strong>
-                  <div class="container-stars"><div class="stars"></div></div>
-                  <div class="glow">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                  </div>
-                </a>
-              </li>
             </ul>
           </nav>
         </div>
@@ -94,10 +78,12 @@
                   </svg>
                 </div>
                 <div class="button-text ff-body">
-                  <span>Powered by</span><span>Foodora</span>
+                  <span>Powered by</span>
+                  <span>Foodora</span>
                 </div>
               </a>
             </li>
+
             <li>
               <a
                 class="brutalist-button button-valorant"
@@ -118,7 +104,8 @@
                   </svg>
                 </div>
                 <div class="button-text">
-                  <span>Download</span><span>VALORANT</span>
+                  <span>Download</span>
+                  <span>VALORANT</span>
                 </div>
               </a>
             </li>
@@ -305,7 +292,6 @@
         </section>
       </main>
 
-      <!-- DRAWER -->
       <div id="profile-drawer" class="drawer" aria-hidden="true">
         <button class="drawer-backdrop" data-close aria-label="Close"></button>
         <aside class="drawer-panel" role="dialog" aria-modal="true">
@@ -318,7 +304,6 @@
         </aside>
       </div>
 
-      <!-- FOOTER -->
       <footer class="footer">
         <div class="footer-content">
           <div class="footer-collab">
@@ -356,7 +341,6 @@
         </div>
       </footer>
     </div>
-    <!-- /page-wrapper -->
 
     <script src="script.js"></script>
   </body>

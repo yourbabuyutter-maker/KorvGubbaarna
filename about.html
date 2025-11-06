@@ -34,8 +34,12 @@
             <img src="images/KG.png" alt="KG" />
           </a>
 
-          <!-- Hamburger toggle (checkbox hack) -->
-          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle"
+            aria-controls="primary-nav"
+          />
           <label class="hamburger" for="menu-toggle" aria-label="Open menu">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <path
@@ -46,19 +50,15 @@
             </svg>
           </label>
 
-          <!-- Main nav (includes Login / Sign Up once) -->
-          <nav class="nav-left ff-display">
+          <nav id="primary-nav" class="nav-left ff-display" aria-label="Main">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="players.html">Players</a></li>
               <li><a href="about.html">About</a></li>
-              <li><a href="#">Login</a></li>
-              <li><a href="#">Sign Up</a></li>
             </ul>
           </nav>
         </div>
 
-        <!-- Right side: ONLY the big brand buttons -->
         <nav class="nav-right ff-display">
           <ul>
             <li>
@@ -81,10 +81,12 @@
                   </svg>
                 </div>
                 <div class="button-text ff-body">
-                  <span>Powered by</span><span>Foodora</span>
+                  <span>Powered by</span>
+                  <span>Foodora</span>
                 </div>
               </a>
             </li>
+
             <li>
               <a
                 class="brutalist-button button-valorant"
@@ -105,7 +107,8 @@
                   </svg>
                 </div>
                 <div class="button-text">
-                  <span>Download</span><span>VALORANT</span>
+                  <span>Download</span>
+                  <span>VALORANT</span>
                 </div>
               </a>
             </li>
@@ -113,7 +116,6 @@
         </nav>
       </header>
 
-      <!-- ===== ABOUT / OM OSS (ESPORT) ===== -->
       <section class="about-kg" id="about">
         <div class="about-wrap">
           <span class="about-chip">Om oss</span>
@@ -167,7 +169,7 @@
 
           <div class="about-cta">
             <a class="btn brand" href="Match_tabbel.html">Se matcher</a>
-            <a class="btn ghost" href="#join">Gå med i communityt</a>
+            <a class="btn ghost" href="https://discord.com">Gå med i communityt</a>
           </div>
         </div>
       </section>
@@ -176,47 +178,56 @@
     <main class="content">
       <section class="card">
         <h3 class="card-title">Valorant</h3>
-        <p class="card-text">Valorantt är ett taktiskt förstapersonsskjutspel utvecklat av Riot Games.<br>
-          Spelet släpptes 2020 och kombinerar klassisk skjutmekanik med unika karaktärer som har egna förmågor.<br>
-          
-          Det finns två lag med fem spelare som möts i rundor - det ena laget försöker plantera en bomb, medan det andra försöker stoppa dem. Kommunikation, strategi och snabb reaktionsförmåga som är viktiga för att vinna
-          </p>
+        <p class="card-text">
+          Valorantt är ett taktiskt förstapersonsskjutspel utvecklat av Riot
+          Games.<br />
+          Spelet släpptes 2020 och kombinerar klassisk skjutmekanik med unika
+          karaktärer som har egna förmågor.<br />
+
+          Det finns två lag med fem spelare som möts i rundor - det ena laget
+          försöker plantera en bomb, medan det andra försöker stoppa dem.
+          Kommunikation, strategi och snabb reaktionsförmåga som är viktiga för
+          att vinna
+        </p>
       </section>
 
       <section class="card">
         <h3 class="card-title">Varför oss?</h3>
-        <p class="card-text">Vi kämpar för att göra alla stolta och ta hem vinsten! Efter år av slit, svett och målmedveten träning är vi redo. <br> Vi Spelar inte bara för oss själva vi spelar för våra familjer, våra vänner och alla som tror på oss</p>
+        <p class="card-text">
+          Vi kämpar för att göra alla stolta och ta hem vinsten! Efter år av
+          slit, svett och målmedveten träning är vi redo. <br />
+          Vi Spelar inte bara för oss själva vi spelar för våra familjer, våra
+          vänner och alla som tror på oss
+        </p>
       </section>
 
       <section class="card">
         <h3 class="card-title">Stream & Sponsor</h3>
-        <p class="card-text">Onsdag <br> <br>
+        <p class="card-text">
+          Onsdag <br />
+          <br />
 
-          
-          w 12:45 - 13:45 korvgubbarna / problem?<br>
-          w 14:00 - 15:00 Bouncing Baldies / PAJALA<br> <br>
-          
-          
-          Torsdag <br> <br>
-          
-          w 9:15 - 10:15 AFK i sängen / Tiffanys<br>
-          w 10:30 - 11:00 special forces / ?<br>
-          L 11:45 - 12:45 ? / ?<br>
-          L 13:00 - 13:50 ? / ?<br>
-          w 14:00 - 15:00 ? - ?<br><br>
-          
-          
-          Fredag<br><br>
-          
-          FL 9:15 - 10:15 ? / ?<br>
-          FW 10:30 - 11:30 ? - ? <br> <br>
-          Stort tack till våra spnsorer Red Bull och Foodora för ert generösa stöd ni har gjort detta möjligt!
+          w 12:45 - 13:45 korvgubbarna / problem?<br />
+          w 14:00 - 15:00 Bouncing Baldies / PAJALA<br />
+          <br />
 
-      
-          
-          
-          
-          </p>
+          Torsdag <br />
+          <br />
+
+          w 9:15 - 10:15 AFK i sängen / Tiffanys<br />
+          w 10:30 - 11:00 special forces / ?<br />
+          L 11:45 - 12:45 ? / ?<br />
+          L 13:00 - 13:50 ? / ?<br />
+          w 14:00 - 15:00 ? - ?<br /><br />
+
+          Fredag<br /><br />
+
+          FL 9:15 - 10:15 ? / ?<br />
+          FW 10:30 - 11:30 ? - ? <br />
+          <br />
+          Stort tack till våra spnsorer Red Bull och Foodora för ert generösa
+          stöd ni har gjort detta möjligt!
+        </p>
       </section>
     </main>
 

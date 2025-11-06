@@ -41,7 +41,7 @@ const PROFILES = {
     ],
     phone: "(+46) 731-111111",
     email: "eliot@example.com",
-    address: "Gothenburg, Sweden",
+    address: "Stockholm, Sweden",
   },
   colin: {
     cover: "images/bg.png",
@@ -63,7 +63,7 @@ const PROFILES = {
     ],
     phone: "(+46) 732-4444444",
     email: "Colin@example.com",
-    address: "Gothenburg, Sweden",
+    address: "Stockholm, Sweden",
   },
   damjan: {
     cover: "images/bg.png",
@@ -85,7 +85,7 @@ const PROFILES = {
     ],
     phone: "(+46) 731-111111",
     email: "Damjan@example.com",
-    address: "Gothenburg, Sweden",
+    address: "Stockholm, Sweden",
   },
   emile: {
     cover: "images/bg.png",
@@ -107,7 +107,7 @@ const PROFILES = {
     ],
     phone: "(+46) 731-111111",
     email: "Emile@example.com",
-    address: "Gothenburg, Sweden",
+    address: "Stockholm, Sweden",
   },
   djamil: {
     cover: "images/bg.png",
@@ -129,7 +129,7 @@ const PROFILES = {
     ],
     phone: "(+46) 731-111111",
     email: "Djamil@example.com",
-    address: "Gothenburg, Sweden",
+    address: "Stockholm, Sweden",
   },
 };
 function buildPcHTML(p) {
@@ -276,4 +276,51 @@ document.addEventListener("keydown", (e) => {
     closeDrawer();
 });
 
+
+const channel = "lbsnorraesport_";
+const parentDomains = ["localhost", "korvgubbarna.se", "www.korvgubbarna.se"];
+
+const offlineNote = document.getElementById("offline-note");
+const statusBadge = document.getElementById("statusBadge");
+const viewerChip  = document.getElementById("viewerChip");
+
+offlineNote.hidden = false;
+statusBadge.textContent = "OFFLINE";
+statusBadge.classList.remove("is-live");
+viewerChip.hidden = true;
+
+const embed = new Twitch.Embed("twitch-embed", {
+  width: "100%",
+  height: "100%",
+  channel,
+  layout: "video",
+  autoplay: false,
+  parent: parentDomains
+});
+
+embed.addEventListener(Twitch.Embed.ONLINE, () => {
+  offlineNote.hidden = true;
+  statusBadge.textContent = "LIVE";
+  statusBadge.classList.add("is-live");
+  viewerChip.hidden = false; 
+});
+
+embed.addEventListener(Twitch.Embed.OFFLINE, () => {
+  offlineNote.hidden = false;
+  statusBadge.textContent = "OFFLINE";
+  statusBadge.classList.remove("is-live");
+  viewerChip.hidden = true;
+});
+
+
+  (function(){
+    const m = document.getElementById('s-matches');
+    const w = document.getElementById('s-wins');
+    const wr = document.getElementById('s-winrate');
+    if (m && w && wr){
+      const mv = parseInt(m.textContent,10)||0;
+      const wv = parseInt(w.textContent,10)||0;
+      if (mv > 0) wr.textContent = (100*wv/mv).toFixed(1) + '%';
+    }
+  })();
 

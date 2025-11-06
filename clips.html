@@ -34,8 +34,12 @@
             <img src="images/KG.png" alt="KG" />
           </a>
 
-          <!-- hidden checkbox + clickable hamburger -->
-          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle"
+            aria-controls="primary-nav"
+          />
           <label class="hamburger" for="menu-toggle" aria-label="Open menu">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <path
@@ -46,36 +50,11 @@
             </svg>
           </label>
 
-          <nav class="nav-left ff-display">
+          <nav id="primary-nav" class="nav-left ff-display" aria-label="Main">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="players.html">Players</a></li>
               <li><a href="about.html">About</a></li>
-              <li>
-                <a href="/login" class="btn" aria-label="Login">
-                  <strong>LOGIN</strong>
-                  <div class="container-stars">
-                    <div class="stars"></div>
-                  </div>
-                  <div class="glow">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href="/signup" class="btn" aria-label="Sign Up">
-                  <strong>SIGN&nbsp;UP</strong>
-                  <div class="container-stars">
-                    <div class="stars"></div>
-                  </div>
-                  <div class="glow">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                  </div>
-                </a>
-              </li>
             </ul>
           </nav>
         </div>
@@ -137,6 +116,71 @@
         </nav>
       </header>
      
+      <main class="kg-reel">
+  <section class="reel-hero">
+    <video
+      id="kgReel"
+      class="reel-video"
+      playsinline
+      muted
+      autoplay
+      loop
+      preload="metadata"
+      poster="images/korvgubbarna_poster.jpg"
+      aria-label="Korvgubbarna team highlight reel"
+    >
+      <source src="video/Lag 7 (KG) Walkin.mp4" type="video/mp4" />
+    </video>
+
+    <div class="reel-overlay">
+      <div class="reel-text">
+        <h1 class="ff-display">Korvgubbarna — Team Reel</h1>
+        <p class="ff-body">
+          Highlights, behind-the-scenes och intro till spelarna. Titta 30–60 sek.
+        </p>
+
+        <div class="reel-actions">
+          <button id="btnPlay" class="reel-btn primary">
+            <i class="fa-solid fa-play"></i> Spela / Pausa
+          </button>
+          <button id="btnMute" class="reel-btn ghost">
+            <i class="fa-solid fa-volume-xmark"></i> Ljud
+          </button>
+          <a class="reel-btn line" href="players.html">
+            <i class="fa-solid fa-user-group"></i> Spelarprofiler
+          </a>
+        </div>
+
+        <ul class="reel-chapters">
+          <li><button data-start="0">Intro</button></li>
+          <li><button data-start="7">Line-up</button></li>
+          <li><button data-start="14">In-game</button></li>
+          <li><button data-start="22">Behind the scenes</button></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="reel-meta">
+    <div class="reel-card">
+      <h2 class="ff-display">Om videon</h2>
+      <p class="ff-body muted">
+        Klippt från träningar och matcher. Kontakta oss om du vill använda materialet i press/PR.
+      </p>
+      <div class="reel-tags">
+        <span>Valorant</span><span>Fortnite</span><span>Team</span><span>Highlights</span>
+      </div>
+    </div>
+
+    <div class="reel-card">
+  <h2 class="ff-display">Links & Info</h2>
+  <p class="ff-body">
+    Watch our weekly stream on Twitch (Lbsnorraesport_). Partner: Foodora.
+  </p>
+</div>
+
+  </section>
+</main>
 
 
     <footer class="footer">
@@ -172,5 +216,39 @@
         </div>
       </div>
     </footer>
+
+    <script>
+  (function(){
+    const vid = document.getElementById('kgReel');
+    const btnPlay = document.getElementById('btnPlay');
+    const btnMute = document.getElementById('btnMute');
+    const chapters = document.querySelectorAll('.reel-chapters button');
+
+    // iOS autoplay help
+    vid.muted = true;
+    vid.playsInline = true;
+
+    btnPlay?.addEventListener('click', async () => {
+      if (vid.paused) { try { await vid.play(); } catch(e){} }
+      else { vid.pause(); }
+    });
+
+    btnMute?.addEventListener('click', () => {
+      vid.muted = !vid.muted;
+      btnMute.innerHTML = vid.muted
+        ? '<i class="fa-solid fa-volume-xmark"></i> Ljud'
+        : '<i class="fa-solid fa-volume-high"></i> Ljud av';
+    });
+
+    chapters.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const s = parseFloat(btn.dataset.start || '0');
+        vid.currentTime = s;
+        if (vid.paused) vid.play().catch(()=>{});
+      });
+    });
+  })();
+</script>
+    <script src="script.js"></script>
   </body>
 </html>

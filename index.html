@@ -31,10 +31,15 @@
       <header class="site-header">
         <div class="start">
           <a class="logo-circle" href="index.html">
-            <img src="images/KG.png" alt="KG" />
+            <img src="images/KG_neon_transparent.gif" alt="KG" />
           </a>
 
-          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <input
+            type="checkbox"
+            id="menu-toggle"
+            class="menu-toggle"
+            aria-controls="primary-nav"
+          />
           <label class="hamburger" for="menu-toggle" aria-label="Open menu">
             <svg viewBox="0 0 32 32" aria-hidden="true">
               <path
@@ -45,36 +50,11 @@
             </svg>
           </label>
 
-          <nav class="nav-left ff-display">
+          <nav id="primary-nav" class="nav-left ff-display" aria-label="Main">
             <ul>
               <li><a href="index.html">Home</a></li>
               <li><a href="players.html">Players</a></li>
               <li><a href="about.html">About</a></li>
-              <li>
-                <a href="/login" class="btn" aria-label="Login">
-                  <strong>LOGIN</strong>
-                  <div class="container-stars">
-                    <div class="stars"></div>
-                  </div>
-                  <div class="glow">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                  </div>
-                </a>
-              </li>
-
-              <li>
-                <a href="/signup" class="btn" aria-label="Sign Up">
-                  <strong>SIGN&nbsp;UP</strong>
-                  <div class="container-stars">
-                    <div class="stars"></div>
-                  </div>
-                  <div class="glow">
-                    <div class="circle"></div>
-                    <div class="circle"></div>
-                  </div>
-                </a>
-              </li>
             </ul>
           </nav>
         </div>
@@ -157,7 +137,10 @@
             </h1>
 
             <p class="lead">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique, dicta reprehenderit, veritatis id quas at placeat commodi soluta libero officia, quisquam consectetur corrupti quia velit tempora praesentium nesciunt culpa. Culpa!
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Similique, dicta reprehenderit, veritatis id quas at placeat
+              commodi soluta libero officia, quisquam consectetur corrupti quia
+              velit tempora praesentium nesciunt culpa. Culpa!
             </p>
 
             <div class="actions">
@@ -167,47 +150,187 @@
           </div>
 
           <figure class="hero-media">
-            <img src="images/Btc.png" alt="Korvgubbarna – serverar korv" />
+            <img src="images/gäng.png" alt="Korvgubbarna – serverar korv" />
           </figure>
         </div>
       </section>
 
-      <div class="streaminfo">
-        <img src="images/Btc.png" alt="Girl in a jacket" width="300px" height="180px">
-        <h1>Twitch Stream</h1>
-        <p>🌭🔥 Korvgubbarna Live! 🔥🌭
+      <section class="kg-split">
+        <!-- ซ้าย: STATS -->
+        <div class="kg-split__left">
+          <h2 class="ff-display">TEAM STATS</h2>
+          <ul class="stat-list">
+            <li>
+              <span class="label">Matches</span><span class="value">32</span>
+            </li>
+            <li>
+              <span class="label">Wins</span><span class="value">21</span>
+            </li>
+            <li>
+              <span class="label">Winrate</span><span class="value">65.6%</span>
+            </li>
+            <li>
+              <span class="label">Avg K/D</span><span class="value">1.21</span>
+            </li>
+            <li>
+              <span class="label">Rounds ±</span><span class="value">+47</span>
+            </li>
+          </ul>
 
-          Vill du se riktig laganda, galna plays och ren e-sportmagi? Då ska du inte missa när Korvgubbarna går live!
-          Vi representerar LBS med stolthet och bjuder på allt från skratt till svettiga matcher i jakten på segern.
-          
-          Men det är inte bara vi som levererar – på vår Twitch-kanal hittar du också andra grymma LBS E-sportlag som visar vad gamingkulturen på skolan handlar om.
-          
-          👉 Tryck på knappen nedanför för att hoppa in i streamen, följ våra matcher live och var med i chatten när vi krossar motståndet.
-          Visa ditt stöd, sprid hypen och heja på Korvgubbarna!</p>
-        <a class="cta" href="https://www.twitch.tv/Lbsnorraesport_" target="_blank">
-          <span class="span">NEXT</span>
-          <span class="second">
-            <svg
-              width="50px"
-              height="20px"
-              viewBox="0 0 66 43"
-              xmlns="http://www.w3.org/2000/svg"
+          <h3 class="ff-display stat-sub">Top Players</h3>
+          <ul class="top-list">
+            <li><span>SID</span><em>IGL</em><b>1.28 K/D</b></li>
+            <li><span>Colin</span><em>Entry</em><b>1.22 K/D</b></li>
+            <li><span>Eliot</span><em>Flex</em><b>1.15 K/D</b></li>
+          </ul>
+        </div>
+
+        <!-- ขวา: LIGA 7 ทีม -->
+        <div class="kg-split__right">
+          <h2 class="ff-display">HJ-2A 2025</h2>
+
+          <div class="league-header">
+            <span class="col-rank">#</span>
+            <span class="col-team">Lag</span>
+            <span class="col-m">M</span>
+            <span class="col-p">P</span>
+          </div>
+
+          <ol class="league-list">
+            <li class="row is-us">
+              <span class="col-rank">1</span>
+              <span class="col-team">
+                <img src="images/badges/kg.png" alt="" />
+                <span class="name">Korvgubbarna</span>
+              </span>
+              <span class="col-m">13</span>
+              <span class="col-p">29</span>
+            </li>
+            <li class="row">
+              <span class="col-rank">2</span
+              ><span class="col-team"
+                ><img src="images/badges/team2.png" alt="" /><span class="name"
+                  >Karlbergs BK</span
+                ></span
+              ><span class="col-m">13</span><span class="col-p">28</span>
+            </li>
+            <li class="row">
+              <span class="col-rank">3</span
+              ><span class="col-team"
+                ><img src="images/badges/team3.png" alt="" /><span class="name"
+                  >Bällsta FF</span
+                ></span
+              ><span class="col-m">13</span><span class="col-p">22</span>
+            </li>
+            <li class="row">
+              <span class="col-rank">4</span
+              ><span class="col-team"
+                ><img src="images/badges/team4.png" alt="" /><span class="name"
+                  >Djurgårdens IF</span
+                ></span
+              ><span class="col-m">13</span><span class="col-p">22</span>
+            </li>
+            <li class="row">
+              <span class="col-rank">5</span
+              ><span class="col-team"
+                ><img src="images/badges/team5.png" alt="" /><span class="name"
+                  >FK Bromma 1</span
+                ></span
+              ><span class="col-m">13</span><span class="col-p">21</span>
+            </li>
+            <li class="row">
+              <span class="col-rank">6</span
+              ><span class="col-team"
+                ><img src="images/badges/team6.png" alt="" /><span class="name"
+                  >Täby FK 31</span
+                ></span
+              ><span class="col-m">13</span><span class="col-p">21</span>
+            </li>
+            <li class="row">
+              <span class="col-rank">7</span
+              ><span class="col-team"
+                ><img src="images/badges/team7.png" alt="" /><span class="name"
+                  >Viggbystad</span
+                ></span
+              ><span class="col-m">13</span><span class="col-p">21</span>
+            </li>
+          </ol>
+
+          <div class="league-foot muted ff-body small">
+            Senast uppdaterad: idag
+          </div>
+        </div>
+      </section>
+
+      <section class="stream-card">
+        <div class="card-inner">
+          <article class="info-pane">
+            <img
+              class="logo-lbs"
+              src="https://lbs.se/wp-content/uploads/2025/06/lbslogotyprgbvit.svg"
+              alt="LBS Logotyp"
+            />
+
+            <h1 class="stream-title">Twitch Stream</h1>
+            <p class="stream-desc">
+              🌭🔥 Korvgubbarna Live! 🔥🌭 Vill du se riktig laganda, galna
+              plays och ren e-sportmagi? Följ våra matcher live och heja på
+              Korvgubbarna!
+            </p>
+
+            <a
+              class="cta"
+              href="https://www.twitch.tv/Lbsnorraesport_"
+              target="_blank"
+              rel="noopener"
             >
-              <g id="arrow" fill="none" fill-rule="evenodd">
-                <path class="one" d="M40.15,3.89 L43.97,0.14 ... Z" fill="#FFFFFF"></path>
-                <path class="two" d="M20.15,3.89 L23.97,0.14 ... Z" fill="#FFFFFF"></path>
-                <path class="three" d="M0.15,3.89 L3.97,0.14 ... Z" fill="#FFFFFF"></path>
-              </g>
-            </svg>
-          </span>
-        </a>
-      </div>
-      
-      
+              <span class="span">NEXT</span>
+              <span class="second">
+                <svg
+                  width="50"
+                  height="20"
+                  viewBox="0 0 66 43"
+                  aria-hidden="true"
+                >
+                  <g id="arrow" fill="none" fill-rule="evenodd">
+                    <path
+                      class="one"
+                      d="M40.15,3.89 L43.97,0.14 ... Z"
+                      fill="#FFFFFF"
+                    ></path>
+                    <path
+                      class="two"
+                      d="M20.15,3.89 L23.97,0.14 ... Z"
+                      fill="#FFFFFF"
+                    ></path>
+                    <path
+                      class="three"
+                      d="M0.15,3.89 L3.97,0.14 ... Z"
+                      fill="#FFFFFF"
+                    ></path>
+                  </g>
+                </svg>
+              </span>
+            </a>
+          </article>
+
+          <article class="live-pane">
+            <div class="twitch-head">
+              <span class="status-badge" id="statusBadge">OFFLINE</span>
+              <span class="viewer-chip" id="viewerChip" hidden>• watching</span>
+            </div>
+
+            <div class="player-wrap">
+              <div id="twitch-embed" class="twitch-embed"></div>
+            </div>
+
+            <div id="offline-note" class="offline-note" hidden>
+              The channel <b>lbsnorraesport_</b> is still offline.
+            </div>
+          </article>
+        </div>
+      </section>
     </div>
-
-    
-
 
     <footer class="footer">
       <div class="footer-content">
@@ -231,8 +354,6 @@
           </a>
         </div>
 
-
-
         <div class="footer-bottom">
           <p>© 2025 Korvgubbarna, All rights reserved.</p>
           <p>
@@ -242,5 +363,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -47,7 +47,7 @@ const PROFILES = {
     cover: "images/bg.png",
     avatar: "images/Colin.png",
     name: "Colin",
-    role: "Defender",
+    role: "Ayato / Entry fragger med en aggressiv spelstil.",
     about: "spelar mest valorant men ibland andra spel. Jag började med det genom att min pappa köpte en xbox 360 som jag fick spela på ofta vilket sparkade igång mitt intresse. Det första spelet jag blev bra på var fortnite för flera år sen. Jag tränar runt 5-6 timmar per dag. Mina föräldrar var emot det i början men har med tiden blivit mer och mer vana vid det. Känslan att vinna en match ger en sorts belöningskänsla vilket är likt när man märker att man typ fått ett A på ett prov, känslan när man förlorar något man borde vunnit är raka motsatsen och känns inte alls kuligt. ",
     exp: [
       {
@@ -69,7 +69,7 @@ const PROFILES = {
     cover: "images/bg.png",
     avatar: "images/Damjan.png",
     name: "Damjan",
-    role: "Team player",
+    role: "Machinegunkelly / Flex med en allsidig spelstil.",
     about: "Jag började med att jag fick min första konsol för flera år sen och där började mitt intresse i e-sport. Det första spelet jag har spelat var Fortnite, jag var inte så bra men sen bytte jag spel till Rocket League och jag visste att jag kunde bli bättre och satsade på det. Jag tränar ungefär 3-4 timmar. Mina föräldrar tycker inte så mycket när jag spelar för mycket men de vet själva att jag sitter och gör ingenting. När man vinner en match då känns det bra, men när man förlorar en match fast man vet att jag skulle vinna känns jag att jag vill ta sönder någonting.",
     exp: [
       {
@@ -91,7 +91,7 @@ const PROFILES = {
     cover: "images/bg.png",
     avatar: "images/Emile.png",
     name: "Emile",
-    role: "Dps",
+    role: "ﾒolivenﾒ / Flex med en allsidig spelstil.",
     about: "började med dataspel redan vid ung ålder då livet saknade hobbys utan tävlingskänsla. Det gick från mobilspel på en gammal Huawei  till 16 timmar LAN och tävlande runt om i världen, från att vinna fiskdamm på kalas till att vinna priser värda flera tusen kronor. Det finns inget ord som beskriver slack och förluster till mig, utan allting handlar om att bara kämpa och spela för vinsten. Esport blev en stor grej till mig eftersom att jag tidigt lärde mig att bli en vinnarskalle. En av de första spelen som lockade mig var Fortnite i mina tidiga år. Jag tränar inte lika ofta längre eftersom jag har övergått till andra viktiga saker i livet, men passionen finns fortfarande kvar. Mina föräldrar har aldrig haft något emot mitt spelande – de tyckte bara att jag borde pröva någon annan hobby, vilket jag också gjorde när jag blev äldre. För mig finns det inget som heter förlust, bara läxor. Varje gång något inte går som planerat tar jag det som en chans att utvecklas, inte som ett nederlag. Det handlar alltid om att vinna – men ännu mer om att växa",
     exp: [
       {
@@ -113,7 +113,7 @@ const PROFILES = {
     cover: "images/bg.png",
     avatar: "images/Djamil.png",
     name: "Djamil",
-    role: "Pusher",
+    role: "Vablu / Pusher med en aggressiv spelstil.",
     about: "Jag började spela spel när Fortnite släpptes. Till en början körde jag och min storebror på vår PS4 men efter ett år ungefär så köpte vår pappa en gaming dator och den las i mitt rum. Så efter det träffade jag nya vänner och spelade varje dag och tillslut började jag spela i turneringar och tävlade. Så simpelt sagt så var mitt första spel jag blev väldigt bra på var Fortnite. Mina föräldrar tyckte inte att det var negativt att jag spelade så mycket, så länge inte det förhindrade mig att plugga, gå på träningar och match osv. Eftersom Fortnite inte alltid var så jätteroligt så körde jag även Valorant, GTA5, NBA 2K och massa andra spel. Men till slut så tröttnade jag på det och jag spelar inte så jättemycket längre. Min spelstil varierar ganska mycket i olika spel, men i Valorant så har jag en väldigt aggressiv mentalitet vilket kan gynna laget mycket men även tvärtom. ",
     exp: [
       {
@@ -172,9 +172,8 @@ function buildPcHTML(p) {
     <div class="pc-section" id="pc-contact">
       <div class="pc-contact-list">
         <div class="pc-contact">📍 ${p.address}</div>
-        <a class="pc-contact" href="tel:${p.phone.replace(/[^\d+]/g, "")}">☎ ${
-    p.phone
-  }</a>
+        <a class="pc-contact" href="tel:${p.phone.replace(/[^\d+]/g, "")}">☎ ${p.phone
+    }</a>
         <a class="pc-contact" href="mailto:${p.email}">✉ ${p.email}</a>
       </div>
     </div>
@@ -257,7 +256,7 @@ document.addEventListener("click", (e) => {
   const cardEl = e.target.closest(".cards .card[data-player]");
   if (cardEl) {
     e.preventDefault();
-    console.log(`Card clicked: ${cardEl.getAttribute("data-player")}`); 
+    console.log(`Card clicked: ${cardEl.getAttribute("data-player")}`);
     lastFocused = cardEl;
     openDrawer(cardEl.getAttribute("data-player"));
   }
@@ -282,7 +281,7 @@ const parentDomains = ["localhost", "korvgubbarna.se", "www.korvgubbarna.se"];
 
 const offlineNote = document.getElementById("offline-note");
 const statusBadge = document.getElementById("statusBadge");
-const viewerChip  = document.getElementById("viewerChip");
+const viewerChip = document.getElementById("viewerChip");
 
 offlineNote.hidden = false;
 statusBadge.textContent = "OFFLINE";
@@ -302,7 +301,7 @@ embed.addEventListener(Twitch.Embed.ONLINE, () => {
   offlineNote.hidden = true;
   statusBadge.textContent = "LIVE";
   statusBadge.classList.add("is-live");
-  viewerChip.hidden = false; 
+  viewerChip.hidden = false;
 });
 
 embed.addEventListener(Twitch.Embed.OFFLINE, () => {
@@ -313,14 +312,14 @@ embed.addEventListener(Twitch.Embed.OFFLINE, () => {
 });
 
 
-  (function(){
-    const m = document.getElementById('s-matches');
-    const w = document.getElementById('s-wins');
-    const wr = document.getElementById('s-winrate');
-    if (m && w && wr){
-      const mv = parseInt(m.textContent,10)||0;
-      const wv = parseInt(w.textContent,10)||0;
-      if (mv > 0) wr.textContent = (100*wv/mv).toFixed(1) + '%';
-    }
-  })();
+(function () {
+  const m = document.getElementById('s-matches');
+  const w = document.getElementById('s-wins');
+  const wr = document.getElementById('s-winrate');
+  if (m && w && wr) {
+    const mv = parseInt(m.textContent, 10) || 0;
+    const wv = parseInt(w.textContent, 10) || 0;
+    if (mv > 0) wr.textContent = (100 * wv / mv).toFixed(1) + '%';
+  }
+})();
 
